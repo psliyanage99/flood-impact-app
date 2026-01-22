@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* Removed 'bg-bg-light' and 'text-text-primary' to prevent build errors */
+  @apply font-sans antialiased;
+  
+  /* Set text color manually to match your theme */
+  color: #1A202C; 
+  
+  /* Your gradient background */
+  background: linear-gradient(135deg, #F8FAFB 0%, #E8F4F8 100%);
+}
+
+/* Animated Background Blobs */
+.animated-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #F8FAFB 0%, #E8F4F8 100%);
+}
+
+.animated-bg::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(45, 156, 219, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -200px; right: -200px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.animated-bg::after {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(86, 204, 242, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -100px; left: -100px;
+  animation: float 15s ease-in-out infinite reverse;
+}
+
+/* Leaflet Map Fix */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}

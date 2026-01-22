@@ -1,0 +1,10 @@
+# IntelliJ
+.idea/
+*.iml
+target/
+
+# VS Code / React
+node_modules/
+dist/
+.env
+.DS_Store
